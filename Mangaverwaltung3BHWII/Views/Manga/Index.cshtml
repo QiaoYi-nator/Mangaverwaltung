@@ -1,0 +1,46 @@
+﻿@model List<Manga>
+@{
+    ViewData["Title"] = "Manga Übersicht";
+}
+
+<h1>Manga Übersicht:</h1>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Titel</th>
+        <th>Autor</th>
+        <th>Veroeffentlichungsdatum</th>
+        <th>Beschreibung</th>
+        <th>Bewertung</th>
+        <th>Sprache</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @{
+        foreach (var manga in Model)
+        {
+
+        <tr>
+            <td>@(manga.MangaId)</td>
+            <td>@(manga.Titel)</td>
+            <td>@(manga.Autor)</td>
+            <td>@(manga.Veroeffentlichungsdatum)</td>
+            <td>@(manga.Beschreibung)</td>
+            <td>@(manga.Bewertung)</td>
+            <td>@(manga.Sprache)</td>
+            <td>@(manga.Status)</td>
+
+        </tr>
+        }
+    }
+
+
+    </tbody>
+
+
+</table>
