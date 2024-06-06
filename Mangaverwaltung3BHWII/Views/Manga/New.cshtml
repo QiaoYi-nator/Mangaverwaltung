@@ -4,8 +4,8 @@
 
 <h1>Neue Manga</h1>
 
-
-<table>
+<form action="/Manga/SaveManga" method="post">
+<table class="table">
     <thead>
     <tr>
         <td>Bezeichnung</td>
@@ -15,7 +15,57 @@
     <tbody>
     <tr>
         <td>Titel</td>
-        <td><input type="text" id="Titel" name="Titel"></td>
+        <td>
+            <input type="text" id="Titel" name="Titel">
+        </td>
     </tr>
+    <tr>
+        <td>Autor</td>
+        <td>
+            <input type="text" id="Autor" name="Autor">
+        </td>
+    </tr>
+    <tr>
+        <td>Veroeffentlichungsdatum</td>
+        <td>
+            <input type="date" id="Veroeffentlichungsdatum" name="Veroeffentlichungsdatum">
+        </td>
+    </tr>
+    <tr>
+        <td>Beschreibung</td>
+        <td>
+            <input type="text" id="Beschreibung" name="Beschreibung">
+        </td>
+    </tr>
+    <tr>
+        <td>Bewertung</td>
+        <td>
+            <input type="number" id="Bewertung" name="Bewertung">
+        </td>
+    </tr>
+    <tr>
+        <td>Sprache</td>
+        <td>
+            <input type="text" id="Sprache" name="Sprache">
+        </td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>
+            <input type="text" id="Status" name="Status">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/Manga" class="btn btn-danger">Abbrechen</a>
+        </td>
+        <td>
+            <button class="btn btn-success">Speichern</button>
+        </td>
+    </tr>
+    
+    
     </tbody>
 </table>
+
+</form>

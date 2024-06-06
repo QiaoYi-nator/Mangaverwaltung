@@ -30,13 +30,13 @@ public class MangaRepository
             // Datensätze in Objekte umwandeln
             Manga newManga = new Manga();
             newManga.MangaId = (int) reader["MangaId"];
-            newManga.Titel = (string) reader["MangaId"];
-            newManga.Autor = (string) reader["MangaId"];
-            newManga.Veroeffentlichungsdatum = (DateTime) reader["MangaId"];
-            newManga.Beschreibung = (string) reader["MangaId"];
-            newManga.Bewertung = (double) reader["MangaId"];
-            newManga.Sprache = (string) reader["MangaId"];
-            newManga.Status = (string) reader["MangaId"];
+            newManga.Titel = (string) reader["Titel"];
+            newManga.Autor = (string) reader["Autor"];
+            newManga.Veroeffentlichungsdatum = (DateTime) reader["Veroeffentlichungsdatum"];
+            newManga.Beschreibung = (string) reader["Beschreibung"];
+            newManga.Bewertung = (double) reader["Bewertung"];
+            newManga.Sprache = (string) reader["Sprache"];
+            newManga.Status = (string) reader["Status"];
             
             mangas.Add(newManga);
         }
