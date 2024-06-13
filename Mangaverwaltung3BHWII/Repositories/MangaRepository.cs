@@ -48,7 +48,21 @@ public class MangaRepository
 
     public void CreateManga(Manga manga)
     {
+        NpgsqlConnection myConnection = ConnectToDB();
         
+        using NpgsqlCommand cmd = new NpgsqlCommand(
+            "INSERT INTO Manga (Titel, Autor, Veroeffentlichungsdatum, Beschreibung, Bewertung, Sprache, Status) " +
+            "VALUES (:v1,:v2,:v3,:v4,:v5,:v6,:v7)", myConnection);
+        
+        cmd.Parameters.AddWithValue("v1", manga.Titel);
+        cmd.Parameters.AddWithValue("v2", manga.Autor);
+        cmd.Parameters.AddWithValue("v3", manga.Veroeffentlichungsdatum);
+        cmd.Parameters.AddWithValue("v4", manga.Beschreibung);
+        cmd.Parameters.AddWithValue("v5", manga.Bewertung);
+        cmd.Parameters.AddWithValue("v6", manga.Sprache);
+        cmd.Parameters.AddWithValue("v7", manga.Status);
+
+        int rowsAffected = cmd.ExecuteNonQuery();
     }
 
     public void DeleteBurger(int mangaId)

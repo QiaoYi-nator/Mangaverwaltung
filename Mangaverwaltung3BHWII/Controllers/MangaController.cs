@@ -19,4 +19,17 @@ public class MangaController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public IActionResult SaveManga(Manga manga)
+    {
+        // Repository holen
+        MangaRepository repo = new MangaRepository();
+        
+        // manga speichern
+        repo.CreateManga(manga);
+        
+        // Zurück zur Übersicht
+        return Redirect("/Manga");
+    }
 }
