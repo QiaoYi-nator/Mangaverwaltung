@@ -1,10 +1,12 @@
-﻿@{
+﻿@model Manga
+@{
     ViewData["Title"] = "Manga Übersicht";
 }
 
-<h1>Neue Manga hinzufügen</h1>
+<h1>Manga bearbeiten</h1>
 
-<form action="/Manga/SaveManga" method="post">
+<form action="/Manga/UpdateManga" method="post">
+    <input type="hidden" id="MangaId" name="MangaId" value="@(Model.MangaId)"/>
     <table class="table">
         <thead>
         <tr>
@@ -16,43 +18,43 @@
         <tr>
             <td>Titel</td>
             <td>
-                <input type="text" id="Titel" name="Titel">
+                <input type="text" id="Titel" name="Titel" value="@(Model.Titel)">
             </td>
         </tr>
         <tr>
             <td>Autor</td>
             <td>
-                <input type="text" id="Autor" name="Autor">
+                <input type="text" id="Autor" name="Autor" value="@(Model.Autor)">
             </td>
         </tr>
         <tr>
             <td>Veroeffentlichungsdatum</td>
             <td>
-                <input type="date" id="Veroeffentlichungsdatum" name="Veroeffentlichungsdatum">
+                <input asp-for="Veroeffentlichungsdatum"/>
             </td>
         </tr>
         <tr>
             <td>Beschreibung</td>
             <td>
-                <input type="text" id="Beschreibung" name="Beschreibung">
+                <input type="text" id="Beschreibung" name="Beschreibung" value="@(Model.Beschreibung)">
             </td>
         </tr>
         <tr>
             <td>Bewertung</td>
             <td>
-                <input type="number" id="Bewertung" name="Bewertung">
+                <input type="number" id="Bewertung" name="Bewertung" value="@(Model.Bewertung)">
             </td>
         </tr>
         <tr>
             <td>Sprache</td>
             <td>
-                <input type="text" id="Sprache" name="Sprache">
+                <input type="text" id="Sprache" name="Sprache" value="@(Model.Sprache)">
             </td>
         </tr>
         <tr>
             <td>Status</td>
             <td>
-                <input type="text" id="Status" name="Status">
+                <input type="text" id="Status" name="Status" value="@(Model.Status)">
             </td>
         </tr>
         <tr>

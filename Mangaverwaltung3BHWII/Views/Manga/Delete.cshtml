@@ -1,0 +1,15 @@
+﻿@model Manga
+@{
+    ViewData["Title"] = "Manga Übersicht";
+}
+
+<h1>Manga Löschen</h1>
+
+<form action="/Manga/DeleteManga" method="post">
+    <input type="hidden" id="MangaId" name="MangaId" value="@(Model.MangaId)"/>
+
+    <h2>Wollen Sie den Manga @(Model.Titel) wirklich löschen?</h2>
+    <a href="/Manga/" class="btn btn-secondary">Nein</a>
+    <button class="btn btn-danger" type="submit">Ja</button>
+
+</form>

@@ -18,6 +18,7 @@
         <th>Bewertung</th>
         <th>Sprache</th>
         <th>Status</th>
+        <th>Aktionen</th>
     </tr>
     </thead>
     <tbody>
@@ -25,18 +26,21 @@
     @{
         foreach (var manga in Model)
         {
+            <tr>
+                <td>@(manga.MangaId)</td>
+                <td>@(manga.Titel)</td>
+                <td>@(manga.Autor)</td>
+                <td>@(manga.Veroeffentlichungsdatum)</td>
+                <td>@(manga.Beschreibung)</td>
+                <td>@(manga.Bewertung)</td>
+                <td>@(manga.Sprache)</td>
+                <td>@(manga.Status)</td>
+                <td>
+                    <a href="/Manga/Edit?MangaId=@(manga.MangaId)" class="btn btn-secondary">Edit</a>
+                    <a href="/Manga/Delete?MangaId=@(manga.MangaId)" class="btn btn-danger">Delete</a>
+                </td>
 
-        <tr>
-            <td>@(manga.MangaId)</td>
-            <td>@(manga.Titel)</td>
-            <td>@(manga.Autor)</td>
-            <td>@(manga.Veroeffentlichungsdatum)</td>
-            <td>@(manga.Beschreibung)</td>
-            <td>@(manga.Bewertung)</td>
-            <td>@(manga.Sprache)</td>
-            <td>@(manga.Status)</td>
-
-        </tr>
+            </tr>
         }
     }
 
